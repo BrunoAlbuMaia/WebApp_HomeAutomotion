@@ -1,9 +1,7 @@
-// Função para atualizar o status da lâmpada e configurar o botão
-
-
+const url = "http://189.107.98.120:9000"
 async function nomeandoButton(){
     const buttonLuz = document.getElementById('buttonLuz');
-    const response = await fetch('http://189.107.98.120:9000/home/VerificandoEquipamentos/', {
+    const response = await fetch(url+'/home/VerificandoEquipamentos/', {
         method: 'GET',
         headers: {
           'Accept': 'application/json',
@@ -28,7 +26,7 @@ async function nomeandoButton(){
 
 async function atualizarStatusLampada() {
     try {
-        const response = await fetch('http://189.107.98.120:9000/home/VerificandoEquipamentos/', {
+        const response = await fetch(url+'/home/VerificandoEquipamentos/', {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
@@ -44,7 +42,7 @@ async function atualizarStatusLampada() {
             if (api_status == "true"){
                 const requestBody = JSON.stringify({ "StatusLampada": "false" });
 
-                const updateResponsetrue = await fetch(`http://189.107.98.120:9000/home/AtualizarEquipamentos/${1}`, {
+                const updateResponsetrue = await fetch(url+`/home/AtualizarEquipamentos/${1}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -62,7 +60,7 @@ async function atualizarStatusLampada() {
             
                 const requestBody = JSON.stringify({ "StatusLampada": "true" });
 
-                const updateResponsefalse = await fetch(`http://189.107.98.120:9000/home/AtualizarEquipamentos/${1}`, {
+                const updateResponsefalse = await fetch(url+`/home/AtualizarEquipamentos/${1}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -88,7 +86,7 @@ async function atualizarStatusLampada() {
 
 async function onOffSensor(){
     try {
-        const response = await fetch('http://189.107.98.120:9000/home/VerificandoEquipamentos/', {
+        const response = await fetch(url+'/home/VerificandoEquipamentos/', {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
@@ -104,7 +102,7 @@ async function onOffSensor(){
             if (api_status == "true"){
                 const requestBody = JSON.stringify({ "AtivacaoSensorMovimento": "false" });
 
-                const updateResponsetrue = await fetch(`http://189.107.98.120:9000/home/AtualizarEquipamentos/${1}`, {
+                const updateResponsetrue = await fetch(url+`/home/AtualizarEquipamentos/${1}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -122,7 +120,7 @@ async function onOffSensor(){
             
                 const requestBody = JSON.stringify({ "AtivacaoSensorMovimento": "true" });
 
-                const updateResponsefalse = await fetch(`http://189.107.98.120:9000/home/AtualizarEquipamentos/${1}`, {
+                const updateResponsefalse = await fetch(url+`/home/AtualizarEquipamentos/${1}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -149,7 +147,7 @@ async function onOffSensor(){
 async function capturarDados(){
     const requestBody = JSON.stringify({ "CapturarMedidaCaixa": "true" });
 
-    const updateResponsetrue = await fetch(`http://189.107.98.120:9000/home/AtualizarEquipamentos/${1}`, {
+    const updateResponsetrue = await fetch(url+`/home/AtualizarEquipamentos/${1}`, {
     method: 'PATCH',
     headers: {
         'Content-Type': 'application/json',
@@ -172,7 +170,7 @@ async function capturarDados(){
             console.log("estou false")
             const bottao = document.getElementById("alturaAgua")
 
-            const response = await fetch('http://189.107.98.120:9000/hidro/PorcentagemCaixa/', {
+            const response = await fetch(url+'/hidro/PorcentagemCaixa/', {
                 method: 'GET',
                 headers: {
                     'Accept': 'application/json',
