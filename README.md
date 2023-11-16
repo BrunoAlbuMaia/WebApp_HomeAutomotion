@@ -14,7 +14,7 @@ A interface gráfica destinada aos moradores dos Kitnets e ao proprietário foi 
      ```bash
     const url = "http://189.107.98.120:9000"
     ```
-- Caso você ainda não tenha clonado a sua API e publicado, siga os passos dito [neste link](http://github.ApiEmPython.com.br](https://github.com/BrunoAlbuMaia/APIHome_automation).
+- Caso você ainda não tenha clonado a sua API e publicado, siga os passos dito [neste link](https://github.com/BrunoAlbuMaia/APIHome_automation).
 
 
 Com os passo acima seguido, você pode publicar essa interface em um servidor de sua preferência, mas se for usar para teste, você pode rodar simplesmente a interface em localmente na sua maquina.
